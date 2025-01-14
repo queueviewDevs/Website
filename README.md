@@ -1,0 +1,7 @@
+# Queue View
+
+Whether you're on your way to get your morning coffee or it's Friday night and you are trying to decide which bar to go to. Every day we are faced with decisions, and as consumers, we would like to make informed decisions. Wait time plays a major role in our decision-making for the aforementioned situations and many others. Generally, you would want to know the shortest lineup to ensure your needs are met as soon as possible. If only there was a database at your fingertips that could outline this information for you, and give you the optimal lineup.
+
+This is where QueueView comes in. QueueView is a mobile app that displays a user-friendly visual representation of the length of a lineup. This way you know if you should spend 5 minutes walking over to a place that would have you waiting in a 20-minute line or 10 minutes walking over to a spot that would have a 2-minute line. This is accomplished through our use of cutting-edge computer-vision detection for humans in lines, paired with a real-time live stream of the lineup (depicted with illustrations of people, for privacy reasons) so that you can see for yourself what lies ahead along with an estimated wait time based on the rate at which the line has been moving.
+
+The scope of this repository includes all of our live stream data, front-end integration, and backend work. It excludes our live-operating hardware, composed of cameras, Raspberry Pi's, and cellular cards that stream the captured camera data.
