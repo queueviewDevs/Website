@@ -23,14 +23,23 @@ const LiveFeed = () => {
   return (
     <div>
       <h1>Raspberry Pi Live Feed</h1>
+      <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "60vh",
+      }}
+    >
       <video
         ref={videoRef}
         controls
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "70%", height: "100%" }}
         playsInline
         muted
       />
     </div>
+  </div>
   );
 };
 
