@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Hls from "hls.js";
+import Navbar from './Navbar.jsx';
 
 const LiveFeed = () => {
   const videoRef = useRef(null);
@@ -21,7 +22,9 @@ const LiveFeed = () => {
   }, []);
 
   return (
+    
     <div>
+      <Navbar />
       <h1>Raspberry Pi Live Feed</h1>
       <div
       style={{

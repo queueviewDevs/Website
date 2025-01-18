@@ -6,16 +6,17 @@ import About from './components/About';
 import Landing from './components/Landing';
 
 function App() {
-  const [activeTab, setActiveTab] = useState("liveview");
 
   return (
     <Router>
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/livefeed" element={<LiveFeed/>} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/livefeed" element={<LiveFeed/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
   </Router>
   );
 }
+
 
 export default App;

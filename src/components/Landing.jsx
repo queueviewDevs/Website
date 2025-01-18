@@ -8,7 +8,7 @@ const Landing = ({ setActiveTab }) => {
       {/* Hero Section */}
       <section className="bg-purple-900 text-white flex-grow py-80 text-center">
         
-        <h1 className="text-4xl font-bold mb-4"> <TypeAnimation
+        <h1 className="text-xl font-bold mb-4"> <TypeAnimation
       sequence={[
         'Queue View.', 2000,
         '', 1000
