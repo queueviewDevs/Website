@@ -9,20 +9,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white">
+    <nav className="bg-gray-900 text-white">
       <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4">
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-purple-400">QUEUE VIEW.</h1>
-
+        <Link
+              to="/">
+        <h1 className="text-3xl justify-items-start font-bold text-purple-900">QUEUE VIEW.</h1>
+        </Link>
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <Link to="/livefeed" className="hover:underline hover:text-purple-300 transition">
+            <Link to="/livefeed" className="hover:underline hover:text-purple-900 transition">
               Live View
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:underline hover:text-purple-300 transition">
+            <Link to="/about" className="hover:underline hover:text-purple-900 transition">
               About
             </Link>
           </li>

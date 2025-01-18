@@ -1,6 +1,7 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router';
+import Footer from './Footer.jsx';
 
 const Landing = ({ setActiveTab }) => {
   return (
@@ -30,15 +31,15 @@ const Landing = ({ setActiveTab }) => {
 
       {/* Features Section */}
       <section className="py-16 text-gray-300 px-8 flex-grow text-center">
-        <h2 className="text-3xl font-bold mb-8">Why Choose Us?</h2>
+        <h2 className="text-3xl font-bold mb-8">Our Features</h2>
         <div className="flex flex-wrap justify-center gap-8">
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">User Friendly</h3>
-            <p>Experience easy......</p>
+            <p>................</p>
           </div>
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Real-Time Interaction</h3>
-            <p>....</p>
+            <p>.........................</p>
           </div>
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Multi-Device Support</h3>
@@ -48,18 +49,7 @@ const Landing = ({ setActiveTab }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-6 text-center">
-        <p className="text-gray-600 mb-2">© 2025 QueueView. All rights reserved.</p>
-        <div className="flex justify-center space-x-4">
-          {/*
-          <a href="/terms" className="text-green-500 hover:underline">
-            Terms of Service
-          </a>
-          <a href="/privacy" className="text-green-500 hover:underline">
-            Privacy Policy
-          </a>*/}
-        </div> 
-      </footer>
+      <Footer />
     </div>
   );
 };
