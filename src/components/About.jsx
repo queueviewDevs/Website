@@ -21,7 +21,7 @@ const About = () => {
                 instead of waiting on long lines.
               </p>
               <button
-                onClick={() => window.open('https://www.linkedin.com/in/apisan/', '_blank')}
+                href="mailto:intentions2002@example.com"
                 className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-500 transition duration-300"
               >
                 Learn More

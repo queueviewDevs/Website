@@ -9,22 +9,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white">
+    <nav className="bg-gray-700 text-white">
       <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4">
         {/* Logo */}
         <Link
               to="/">
-        <h1 className="text-3xl justify-items-start font-bold text-purple-900">QUEUE VIEW.</h1>
+        <h1 className="text-3xl justify-items-start font-bold text-purple-500 font-mono">QUEUE VIEW.</h1>
         </Link>
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <Link to="/livefeed" className="hover:underline hover:text-purple-900 transition">
+            <Link to="/liveview" className="hover:underline hover:text-purple-900 transition font-mono">
               Live View
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:underline hover:text-purple-900 transition">
+            <Link to="/about" className="hover:underline hover:text-purple-900 transition font-mono">
               About
             </Link>
           </li>
@@ -44,12 +44,12 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <ul className="flex flex-col space-y-4 bg-gray-700 p-6 text-center md:hidden">
+        <ul className="flex flex-col space-y-4 bg-gray-500 p-6 text-center md:hidden">
           <li>
             <Link
-              to="/livefeed"
+              to="/liveview"
               onClick={toggleMenu} // Close menu on link click
-              className="hover:underline hover:text-purple-300 transition"
+              className="hover:underline hover:text-purple-300 transition font-mono"
             >
               Live View
             </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <Link
               to="/about"
               onClick={toggleMenu} // Close menu on link click
-              className="hover:underline hover:text-purple-300 transition"
+              className="hover:underline hover:text-purple-300 transition font-mono"
             >
               About
             </Link>

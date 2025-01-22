@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router';
 import Footer from './Footer.jsx';
 
-const Landing = ({ setActiveTab }) => {
+const Landing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -19,10 +19,10 @@ const Landing = ({ setActiveTab }) => {
       style={{ fontSize: '2em', display: 'inline-block' }}
       repeat={Infinity}
     /></h1>
-        <p className="text-lg mb-6">Bleh Bleh Bleh.</p>
+        <p className="text-lg mb-6">Coming Soon 🤫🤫🤫</p>
         <div>
-          <Link to="/livefeed">
-          <button onClick={() => setActiveTab("liveview")}className="bg-white text-purple-900 font-medium px-6 py-2 rounded-lg shadow hover:bg-gray-100 mx-2">
+          <Link to="/liveview">
+          <button className="bg-white text-purple-900 font-medium px-6 py-2 rounded-lg shadow hover:bg-gray-100 mx-2">
            Click to Watch Live View
           </button>
           </Link>
