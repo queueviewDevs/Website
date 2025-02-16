@@ -8,7 +8,7 @@ const LiveView = () => {
   useEffect(() => {
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource(
+      hls.loadSource(   
         "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
       );
       hls.attachMedia(videoRef.current);

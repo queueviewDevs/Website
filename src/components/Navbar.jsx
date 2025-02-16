@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
               to="/">
-        <h1 className="text-3xl justify-items-start font-bold text-purple-500 font-mono">QUEUE VIEW.</h1>
+        <h1 className="text-3xl justify-items-start font-bold text-purple-500 font-mono">QUEUEVIEW</h1>
         </Link>
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6">

@@ -11,7 +11,7 @@ const Landing = () => {
         
         <h1 className="text-xl font-bold mb-4"> <TypeAnimation
       sequence={[
-        'Queue View.', 2000,
+        'QueueView', 2000,
         '', 1000
       ]}
       wrapper="span"
@@ -19,7 +19,7 @@ const Landing = () => {
       style={{ fontSize: '2em', display: 'inline-block' }}
       repeat={Infinity}
     /></h1>
-        <p className="text-lg mb-6">Coming Soon 🤫🤫🤫</p>
+        <p className="text-lg mb-6">No one likes to wait in line</p>
         <div>
           <Link to="/liveview">
           <button className="bg-white text-purple-900 font-medium px-6 py-2 rounded-lg shadow hover:bg-gray-100 mx-2">
@@ -35,15 +35,12 @@ const Landing = () => {
         <div className="flex flex-wrap justify-center gap-8">
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">User Friendly</h3>
-            <p>................</p>
           </div>
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Real-Time Interaction</h3>
-            <p>.........................</p>
           </div>
           <div className="max-w-sm text-gray-300 p-6 border rounded-lg shadow hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Multi-Device Support</h3>
-            <p>Stream from anywhere on any device.</p>
           </div>
         </div>
       </section>
