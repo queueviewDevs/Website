@@ -6,7 +6,7 @@ import Footer from "./Footer.jsx";
 const LiveView = () => {
   const videoRef = useRef(null);
   const [streamError, setStreamError] = useState(false);
-  const streamURL = "https://queueview.ca:8081/hls/eric/index.m3u8";
+  const streamURL = "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8";
 
   useEffect(() => {
     const video = videoRef.current;
@@ -57,7 +57,7 @@ const LiveView = () => {
         <div className="flex justify-center items-center h-[60vh]">
           {streamError ? (
             <img
-              src="/fallback.jpg"
+              src="/assets/right_back.png"
               alt="We'll be right back"
               className="w-3/4 max-w-lg"
             />
