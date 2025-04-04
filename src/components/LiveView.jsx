@@ -1,27 +1,48 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
+
 const LiveView = () => {
   const videoRef = useRef(null);
+  const [streamError, setStreamError] = useState(false);
+  const streamURL = "https://queueview.ca:8081/hls/eric/index.m3u8";
 
   useEffect(() => {
+    const video = videoRef.current;
+
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource(   
-        "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-      );
-      hls.attachMedia(videoRef.current);
+      hls.loadSource(streamURL);
+      hls.attachMedia(video);
+
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        videoRef.current.play();
+        video.play().catch(() => setStreamError(true));
       });
-    } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
-      videoRef.current.src =
-        "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8";
-      videoRef.current.addEventListener("loadedmetadata", () => {
-        videoRef.current.play();
+
+      hls.on(Hls.Events.ERROR, (_, data) => {
+        if (data.fatal) {
+          console.error("HLS Error:", data);
+          setStreamError(true);
+          hls.destroy();
+        }
       });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = streamURL;
+      video.addEventListener("loadedmetadata", () => {
+        video.play().catch(() => setStreamError(true));
+      });
+      video.addEventListener("error", () => {
+        console.error("Native video playback error");
+        setStreamError(true);
+      });
+    } else {
+      setStreamError(true);
     }
+
+    return () => {
+      video?.removeEventListener("error", () => setStreamError(true));
+    };
   }, []);
 
   return (
@@ -33,25 +54,25 @@ const LiveView = () => {
         <h1 className="text-center text-2xl font-bold mt-4 mb-6">
           Raspberry Pi Live Feed
         </h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "60vh",
-          }}
-        >
-          <video
-            ref={videoRef}
-            controls
-            style={{ width: "70%", height: "100%" }}
-            playsInline
-            muted
-          />
+        <div className="flex justify-center items-center h-[60vh]">
+          {streamError ? (
+            <img
+              src="/fallback.jpg"
+              alt="We'll be right back"
+              className="w-3/4 max-w-lg"
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              controls
+              className="w-3/4 h-full"
+              playsInline
+              muted
+            />
+          )}
         </div>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

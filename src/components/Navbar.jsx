@@ -19,6 +19,11 @@ const Navbar = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6">
           <li>
+            <Link to="/admin" className="hover:underline hover:text-purple-900 transition font-mono">
+              Admin
+            </Link>
+          </li>
+          <li>
             <Link to="/liveview" className="hover:underline hover:text-purple-900 transition font-mono">
               Live View
             </Link>
@@ -61,6 +66,15 @@ const Navbar = () => {
               className="hover:underline hover:text-purple-300 transition font-mono"
             >
               About
+            </Link>
+          </li>
+          <li>
+          <Link
+              to="/admin"
+              onClick={toggleMenu} 
+              className="hover:underline hover:text-purple-300 transition font-mono"
+            >
+              Admin
             </Link>
           </li>
         </ul>
