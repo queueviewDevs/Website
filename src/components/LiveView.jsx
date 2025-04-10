@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
+import Tracking from "./Tracking.jsx";
 
 const LiveView = () => {
   const videoRef = useRef(null);
@@ -54,22 +55,25 @@ const LiveView = () => {
         <h1 className="text-center text-2xl font-bold mt-4 mb-6">
           Raspberry Pi Live Feed
         </h1>
-        <div className="flex justify-center items-center h-[60vh]">
-          {streamError ? (
-            <img
-              src="public\assets\right_back.png"
-              alt="We'll be right back"
-              className="w-3/4 max-w-lg"
-            />
-          ) : (
-            <video
-              ref={videoRef}
-              controls
-              className="w-3/4 h-full"
-              playsInline
-              muted
-            />
-          )}
+        <div className="flex flex-col items-center">
+          <div className="flex justify-center w-3/4 mb-6" style={{ height: '50vh' }}>
+            {streamError ? (
+              <img
+                src="\assets\right_back.png"
+                alt="We'll be right back"
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                controls
+                className="w-full h-full"
+                playsInline
+                muted
+              />
+            )}
+          </div>
+          <Tracking />
         </div>
       </main>
 
